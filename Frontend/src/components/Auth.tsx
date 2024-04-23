@@ -4,7 +4,6 @@ import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { BACKEND_URL } from "../config";
 
-
 export const Auth = ({ type }: { type: "signup" | "signin" }) => {
     const [postInputs, setPostInputs] = useState<SignupInput>({
         name: "",
@@ -21,8 +20,8 @@ export const Auth = ({ type }: { type: "signup" | "signin" }) => {
             navigate("/blogs");
         }
         catch (e) {
-            //alert the user  about request failed
-            alert("error in signing")
+            //alert the user  about~ request failed
+           alert("error in signing")
         }
     }
     return <div className="h-screen flex justify-center flex-col">
@@ -34,7 +33,7 @@ export const Auth = ({ type }: { type: "signup" | "signin" }) => {
                     <div className="t ext-slate-400">
                         {type === "signin" ? "Don't have account yet?" : "Already have an account?"}
                         <Link className="pl-2 underline" to={type === "signin" ? "/signup" : "/signin"}>
-                            {type === "signin" ? "sign up  " : "sign in"}
+                            {type === "signin" ? "sign up" : "sign in"}
                         </Link>
                     </div>
                 </div>
@@ -61,7 +60,6 @@ export const Auth = ({ type }: { type: "signup" | "signin" }) => {
                     <div className="pt-4">
                         <button onClick={sendRequest} className="w-full bg-blue-500 hover:bg-blue-700  text-white font-bold py-2 px- rounded">{type === "signup"}
                         {type === "signin" ? "Sign in" : "Sign up"}
-
                         </button>
                     </div>
                 </div>
